@@ -7,7 +7,7 @@ import AddTodo from "../components/AddTodo";
 const Home = () => {
   return (
     <div
-      className="h-screen dark:bg-[#17191d] bg-slate-50 dark:text-gray-200 text-gray-800 grid grid-rows-[1.5fr,2fr] md:grid-rows-[1fr,2fr] sm:grid-rows-[1.5fr,2fr]
+      className="h-screen dark:bg-[#17191d] bg-slate-100 dark:text-gray-200 text-gray-800 grid grid-rows-[1.5fr,2fr] md:grid-rows-[1fr,2fr] sm:grid-rows-[1.5fr,2fr]
      font-Josefin"
     >
       <div

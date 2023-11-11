@@ -33,7 +33,7 @@ const AllTodo = () => {
     completeTask({ task, completed: true });
   };
   return (
-    <div className="dark:bg-[#2c363f] bg-white h-full mt-[1.6rem] rounded-md shadow-md">
+    <div className="dark:bg-[#2c363f] bg-white h-full mt-[1.6rem] rounded-md shadow-lg">
       <div className="dark:border-gray-500 border-gray-300  border-b-[1px]">
         <div className="flex justify-between sm:justify-center items-center p-4 text-sm text-gray-400 cursor-pointer">
           <p className="sm:hidden">{incompleteTask.length} items left</p>
