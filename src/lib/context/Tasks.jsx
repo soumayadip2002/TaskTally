@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext, createContext } from "react";
 import { databases } from "../appwrite";
-import { ID } from "appwrite";
+import { ID, Query } from "appwrite";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export const DATABASE_ID = import.meta.env.VITE_DATABASE_ID;
@@ -125,7 +125,13 @@ const TasksProvider = ({ children }) => {
   };
 
   const getTask = async () => {
-    const response = await databases.listDocuments(DATABASE_ID, COLLECTION_ID);
+    const response = await databases.listDocuments(
+      DATABASE_ID, 
+      COLLECTION_ID,
+      [
+        Query.orderDesc('$createdAt')
+      ]
+    );
     setTasks(response.documents);
   };
 
