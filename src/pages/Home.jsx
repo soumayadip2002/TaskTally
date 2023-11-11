@@ -11,9 +11,9 @@ const Home = () => {
      font-Josefin"
     >
       <div
-        className={`dark:bg-[url('src/assets/image/bg-desktop-dark.jpg')] 
-      bg-[url('src/assets/image/bg-desktop-light.jpg')] md:dark:bg-[url('src/assets/image/bg-mobile-dark.jpg')] 
-      md:bg-[url('src/assets/image/bg-mobile-light.jpg')] bg-cover bg-no-repeat bg-center`}
+        className={`dark:bg-[url('/image/bg-desktop-dark.jpg')] 
+      bg-[url('/image/bg-desktop-light.jpg')] md:dark:bg-[url('/image/bg-mobile-dark.jpg')] 
+      md:bg-[url('/image/bg-mobile-light.jpg')] bg-cover bg-no-repeat bg-center`}
       >
         <Logout />
       </div>

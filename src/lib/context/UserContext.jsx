@@ -2,7 +2,7 @@ import { acount } from "../appwrite";
 import { useContext, createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ID } from "appwrite";
-import Loading from "../../assets/image/loading.gif";
+import Loading from "/image/loading.gif";
 
 const AuthContext = createContext();
 export const useUser = () => {
