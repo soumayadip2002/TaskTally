@@ -58,6 +58,6 @@ If you want to run Task Tally locally or contribute to its development, follow t
 
 ## Feedback and Contributions
 
-If you encounter any issues or have suggestions for improvement, feel free to [open an issue](https://github.com/your-username/task-tally/issues). Contributions are also welcome; just fork the repository, make your changes, and submit a pull request.
+If you encounter any issues or have suggestions for improvement, feel free to [open an issue](https://github.com/soumayadip2002/TaskTally/issues). Contributions are also welcome; just fork the repository, make your changes, and submit a pull request.
 
 Happy task-tallying! 🚀
