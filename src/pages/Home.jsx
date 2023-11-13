@@ -1,9 +1,10 @@
 import React from "react";
 import Logout from "../components/Logout";
 import Intro from "../components/Intro";
-import Todo from "../components/Todo";
 import AllTodo from "../components/AllTodo";
 import AddTodo from "../components/AddTodo";
+
+const notify = () => toast.success('Here is your toast.');
 const Home = () => {
   return (
     <div
