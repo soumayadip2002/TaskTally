@@ -5,7 +5,7 @@ import UserProvider from "./lib/context/UserContext";
 import PrivateRoute from "./lib/context/PrivateRoute";
 import Home from "./pages/Home";
 import TasksProvider from "./lib/context/Tasks";
-
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <UserProvider>
@@ -17,6 +17,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
+        <div>
+          <Toaster position="top-center" />
+        </div>
       </TasksProvider>
     </UserProvider>
   );

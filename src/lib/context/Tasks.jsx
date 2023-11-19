@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext, createContext } from "react";
 import { databases } from "../appwrite";
 import { ID, Query } from "appwrite";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+//import { ToastContainer, toast } from "react-toastify";
+//import "react-toastify/dist/ReactToastify.css";
+import toast from "react-hot-toast";
 export const DATABASE_ID = import.meta.env.VITE_DATABASE_ID;
 export const COLLECTION_ID = import.meta.env.VITE_COLLECTION_ID;
 
@@ -21,13 +22,9 @@ const TasksProvider = ({ children }) => {
         taskData
       );
       setTasks((tasks) => [response, ...tasks]);
-      if (response) {
-        toast.success("Successfully Created!!", {
-          position:'bottom-left',
-          autoClose: 1000,
-          theme: "colored",
-        });
-      }
+      toast.success("Successfully Created",{
+        icon:"✅"
+      })
     } catch (err) {
       console.log(err);
     }
@@ -48,9 +45,7 @@ const TasksProvider = ({ children }) => {
 
       if (response) {
         toast.success("Successfully Completed Task!!", {
-          position:'bottom-left',
-          autoClose: 1000,
-          theme: "colored",
+          icon:"✅"
         });
       }
     } catch (err) {
@@ -72,9 +67,7 @@ const TasksProvider = ({ children }) => {
 
       if (response) {
         toast.success("Successfully Edited!!", {
-          position:'bottom-left',
-          autoClose: 1000,
-          theme: "colored",
+          icon:"✅"
         });
       }
     } catch (err) {
@@ -93,9 +86,7 @@ const TasksProvider = ({ children }) => {
       setTasks((tasks) => tasks.filter((task) => task.$id !== taskId));
       if (response) {
         toast.success("Successfully Deleted!!", {
-          position:'bottom-left',
-          autoClose: 1000,
-          theme: "colored",
+          icon:"✅"
         });
       }
     } catch (err) {
@@ -115,9 +106,7 @@ const TasksProvider = ({ children }) => {
       }
       setTasks((tasks) => tasks.filter((task) => !task.completed));
       toast.success("Successfully Deleted Completed Task!!", {
-        position:'bottom-left',
-        autoClose: 1000,
-        theme: "colored",
+        icon:"✅"
       });
     } catch (err) {
       console.log(err);
@@ -125,13 +114,9 @@ const TasksProvider = ({ children }) => {
   };
 
   const getTask = async () => {
-    const response = await databases.listDocuments(
-      DATABASE_ID, 
-      COLLECTION_ID,
-      [
-        Query.orderDesc('$createdAt')
-      ]
-    );
+    const response = await databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
+      Query.orderDesc("$createdAt"),
+    ]);
     setTasks(response.documents);
   };
 
@@ -148,9 +133,7 @@ const TasksProvider = ({ children }) => {
     deleteCompletedTask,
   };
   return (
-    <TasksContext.Provider value={userTasks}>
-      {children} <ToastContainer />
-    </TasksContext.Provider>
+    <TasksContext.Provider value={userTasks}>{children}</TasksContext.Provider>
   );
 };
 
